@@ -40,8 +40,8 @@ var cursor = document.querySelector('.cursor')
 var main = document.querySelector('.main')
 var video = document.querySelector('.video')
 main.addEventListener('mousemove', function(dets){
-    cursor.style.left = dets.x +"px"
-    cursor.style.top = dets.y +"px"
+    cursor.style.left = dets.x+20 +"px"
+    cursor.style.top = dets.y+20 +"px"
 })
 
 // video.addEventListener('mouseenter',function(){
@@ -114,5 +114,12 @@ box.forEach(function(elem){
        cursor.style.height="270px"
        cursor.style.borderRadius="0px"
        cursor.style.backgroundImage=`url(${att})`
+    })
+    elem.addEventListener('mouseleave',function(){
+       var att =  elem.getAttribute('data-image')
+       cursor.style.width="15px"
+       cursor.style.height="15px"
+       cursor.style.borderRadius="50%"
+       cursor.style.backgroundImage=`none`
     })
 })
